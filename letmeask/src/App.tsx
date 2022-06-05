@@ -1,12 +1,9 @@
 import { Button } from "./components/Button";
+import { Home } from "./pages/home";
 
 function App() {
   return (
-    <div>
-      <Button />
-      <Button />
-      <Button />
-    </div>
+    <Home />
   );
 }
 
