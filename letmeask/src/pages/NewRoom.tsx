@@ -1,8 +1,8 @@
 // webpack (snowpack, vite) | module bandler todos import passam pelo webpack
+import { Link } from "react-router-dom";
 import illustrationImg from "../assets/images/images/illustration.svg";
 import logoImg from "../assets/images/images/logo.svg";
-import googleIconImg from "../assets/images/images/google-icon.svg";
-import '../styles/auth.scss';
+import "../styles/auth.scss";
 import { Button } from "../components/Button";
 export function NewRoom() {
   return (
@@ -17,20 +17,15 @@ export function NewRoom() {
       </aside>
       <main>
         <div className="main-content">
-            <img src={logoImg} alt="letmeask" />
-            <h2>Criar uma nova sala</h2>
-            <form>
-                <input 
-                type="text"
-                placeholder="Nome da sala"
-                />
-                <Button type="submit">
-                    Criar sala
-                </Button>
-            </form>
-            <p>
-                Quer entrar em uma sala existente? <a href="#">clique aqui</a>
-            </p>
+          <img src={logoImg} alt="letmeask" />
+          <h2>Criar uma nova sala</h2>
+          <form>
+            <input type="text" placeholder="Nome da sala" />
+            <Button type="submit">Criar sala</Button>
+          <p>
+            Quer entrar em uma sala existente? <Link to="/">clique aqui</Link>
+          </p>
+          </form>
         </div>
       </main>
     </div>
