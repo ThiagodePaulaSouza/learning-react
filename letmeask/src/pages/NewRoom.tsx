@@ -4,7 +4,11 @@ import illustrationImg from "../assets/images/images/illustration.svg";
 import logoImg from "../assets/images/images/logo.svg";
 import "../styles/auth.scss";
 import { Button } from "../components/Button";
+import { useContext } from "react";
+import { AuthContext } from "../App";
 export function NewRoom() {
+  const { user } = useContext(AuthContext)
+
   return (
     <div id="page-auth">
       <aside>
@@ -16,6 +20,9 @@ export function NewRoom() {
         <p>Tire as dúvidas da sua audiência em tempo-real</p>
       </aside>
       <main>
+        <h1>seu nome é: {user?.name}</h1>
+        {/* <h1>seu avatar é: {user?.avatar}</h1><br/> */}
+        {/* <h1>seu id é: {user?.id}</h1> */}
         <div className="main-content">
           <img src={logoImg} alt="letmeask" />
           <h2>Criar uma nova sala</h2>

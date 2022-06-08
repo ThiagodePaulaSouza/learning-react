@@ -5,11 +5,19 @@ import logoImg from "../assets/images/images/logo.svg";
 import googleIconImg from "../assets/images/images/google-icon.svg";
 import "../styles/auth.scss";
 import { Button } from "../components/Button";
+import { firebase, auth } from "../services/firebase";
+import { useContext } from "react";
+import { AuthContext } from "../App";
 
 export function Home() {
   const history = useHistory();
+  const { signInWithGoogle, user } = useContext(AuthContext)
 
-  function navigateToNewRoom() {
+  async function handleCreateRoom() {
+    if (!user) {
+      await signInWithGoogle()
+    }
+
     history.push("/rooms/new");
   }
 
@@ -28,12 +36,12 @@ export function Home() {
         <div className="main-content">
           <img src={logoImg} alt="letmeask" />
 
-          <form>
-            <button onClick={navigateToNewRoom} className="create-room">
-              <img src={googleIconImg} alt="Logo do Google" />
-              Crie sua sala com o google
-            </button>
+          <button onClick={handleCreateRoom} className="create-room">
+            <img src={googleIconImg} alt="Logo do Google" />
+            Crie sua sala com o google
+          </button>
 
+          <form>
             <div className="separator">ou entre em uma sala</div>
 
             <input type="text" placeholder="Digite o código da sala" />
