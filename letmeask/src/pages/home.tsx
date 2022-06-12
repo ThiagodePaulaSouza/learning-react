@@ -9,15 +9,14 @@ import { useAuth } from "../hooks/useAuth";
 import { FormEvent, useState } from "react";
 import { database } from "../services/firebase";
 
-export function Home() 
-{
-  const [roomCode, setRoomCode] = useState('');
+export function Home() {
+  const [roomCode, setRoomCode] = useState("");
   const history = useHistory();
   const { signInWithGoogle, user } = useAuth();
 
   async function handleCreateRoom() {
     if (!user) {
-      await signInWithGoogle()
+      await signInWithGoogle();
     }
 
     history.push("/rooms/new");
@@ -25,18 +24,23 @@ export function Home()
 
   async function handleJoinRoom(event: FormEvent) {
     event.preventDefault();
-    
-    if (roomCode.trim() === '') {
+
+    if (roomCode.trim() === "") {
       return;
     }
 
-    const roomref = await database.ref(`rooms/${roomCode}`).get()
+    const roomref = await database.ref(`rooms/${roomCode}`).get();
     if (!roomref.exists()) {
-      alert('Room does not exist.');
+      alert("Room does not exist.");
       return;
     }
 
-    history.push(`/rooms/${roomCode}`)
+    if (roomref.val().endedAt) {
+      alert("Room Already closed.");
+      return;
+    }
+
+    history.push(`/rooms/${roomCode}`);
   }
 
   return (
@@ -62,11 +66,11 @@ export function Home()
           <form onSubmit={handleJoinRoom}>
             <div className="separator">ou entre em uma sala</div>
 
-            <input 
-            type="text" 
-            placeholder="Digite o código da sala" 
-            onChange={event => setRoomCode(event.target.value)}
-            value={roomCode}
+            <input
+              type="text"
+              placeholder="Digite o código da sala"
+              onChange={(event) => setRoomCode(event.target.value)}
+              value={roomCode}
             />
 
             <Button type="submit">Entrar na sala</Button>
