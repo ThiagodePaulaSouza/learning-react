@@ -2,6 +2,14 @@
 ## Projeto: letmeask
 colocar perguntas no mesmo local e fazer os kra votar nas perguntas pra eles responder
 
+
+#### Fazer Deploy da aplicação
+
+`npm install -g firebase-tools`
+`firebase login`
+`firebase init`
+`yarn build`
+`firebase deploy`
 #### Regras de autorização do firebase
 ```json
 {
