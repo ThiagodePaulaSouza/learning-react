@@ -1,22 +1,22 @@
+import "../room.scss";
+import logoImg from "../../../assets/images/images/logo.svg";
+import deleteImg from "../../../assets/images/images/delete.svg";
+import checkImg from "../../../assets/images/images/check.svg";
+import answerImg from "../../../assets/images/images/answer.svg";
+
 import { useHistory, useParams } from "react-router-dom";
-import logoImg from "../assets/images/images/logo.svg";
-import "../styles/room.scss";
-import { Button } from "../components/Button";
-import { RoomCode } from "../components/RoomCode";
-// import { useAuth } from "../hooks/useAuth";
-import { Question } from "../components/Questions";
-import { useRoom } from "../hooks/useRoom";
-import deleteImg from "../assets/images/images/delete.svg";
-import { database } from "../services/firebase";
-import checkImg from "../assets/images/images/check.svg";
-import answerImg from "../assets/images/images/answer.svg";
+
+import { Button } from "../../../components/Button";
+import { RoomCode } from "../../../components/RoomCode";
+import { Question } from "../../../components/Question";
+import { useRoom } from "../../../hooks/useRoom";
+import { database } from "../../../services/firebase";
 
 type RoomParams = {
   id: string;
 };
 
-export function AdminRoom() {
-  // const { user } = useAuth();
+export function RoomAdmin() {
   const params = useParams<RoomParams>(); //generic RoomParams (it's like a parameter to the type)
   const roomId = params.id;
   const { title, questions } = useRoom(roomId);

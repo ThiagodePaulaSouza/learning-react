@@ -1,12 +1,14 @@
 // webpack (snowpack, vite) | module bandler todos import passam pelo webpack
-import { useHistory } from "react-router-dom";
-import illustrationImg from "../assets/images/images/illustration.svg";
-import logoImg from "../assets/images/images/logo.svg";
-import googleIconImg from "../assets/images/images/google-icon.svg";
 import "../styles/auth.scss";
+import logoImg from "../assets/images/images/logo.svg";
+import illustrationImg from "../assets/images/images/illustration.svg";
+import googleIconImg from "../assets/images/images/google-icon.svg";
+
+import { FormEvent, useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import { Button } from "../components/Button";
 import { useAuth } from "../hooks/useAuth";
-import { FormEvent, useState } from "react";
 import { database } from "../services/firebase";
 
 export function Home() {

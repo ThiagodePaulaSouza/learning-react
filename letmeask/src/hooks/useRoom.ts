@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react";
-import { database } from "../services/firebase";
 import { useAuth } from "./useAuth";
+import { database } from "../services/firebase";
 
-type FirebaseQuestions = Record<string,{
-  author: {
-    name: string;
-    avatar: string;
-  };
-  content: string;
-  isAnswered: boolean;
-  isHighlighted: boolean;
-  likes: Record<string,{
-      authorId: string;
-    }>;
-}>;
+type FirebaseQuestions = Record<
+  string,
+  {
+    author: {
+      name: string;
+      avatar: string;
+    };
+    content: string;
+    isAnswered: boolean;
+    isHighlighted: boolean;
+    likes: Record<
+      string,
+      {
+        authorId: string;
+      }
+    >;
+  }
+>;
 
 type QuestionType = {
   id: string;
@@ -29,7 +35,7 @@ type QuestionType = {
 };
 
 export function useRoom(roomId: string) {
-  const { user } = useAuth()
+  const { user } = useAuth();
 
   const [questions, setQuestions] = useState<QuestionType[]>([]);
 
@@ -51,7 +57,9 @@ export function useRoom(roomId: string) {
             isHighlighted: value.isHighlighted,
             isAnswered: value.isAnswered,
             likeCount: Object.values(value.likes ?? {}).length,
-            likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
+            likeId: Object.entries(value.likes ?? {}).find(
+              ([key, like]) => like.authorId === user?.id
+            )?.[0],
           };
         }
       );
@@ -60,9 +68,8 @@ export function useRoom(roomId: string) {
     });
 
     return () => {
-      roomRef.off('value') //remove todos o listeners do value
-    }
-
+      roomRef.off("value"); //remove todos o listeners do value
+    };
   }, [roomId, user?.id]);
 
   return { questions, title };
