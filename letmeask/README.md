@@ -2,10 +2,12 @@
 ## Projeto: letmeask
 link da aplicação: https://letmeask-946a0.web.app/
 
+
 ### Sobre
 A aplicação consiste criar ou entrar em uma sala e fazer perguntas.
 
 Este é um projeto desenvolvido durante a **[Next Level Week Together](https://nextlevelweek.com/)**, apresentada dos dias 20 a 27 de Junho de 2021.
+[notionRef](https://www.notion.so/Mission-ReactJS-f01ae1ba0f8148ad8f1defbf990be484)
 
 Este projeto foi desenvolvido utilizando as seguintes <strong>tecnologias</strong>: 
 
@@ -14,11 +16,11 @@ Este projeto foi desenvolvido utilizando as seguintes <strong>tecnologias</stron
 - [TypeScript](https://www.typescriptlang.org/)
 
 #### pagina inicial
-![pagina inicial](./pagina-inicial.PNG)
+![pagina inicial](./project-images/pagina-inicial.PNG)
 #### pagina da sala do usuário
-![](./pagina-sala-usuario.PNG)
+![](./project-images/pagina-sala-usuario.PNG)
 #### pagina da sala do admin
-![](./pagina-sala-admin.PNG)
+![](./project-images/pagina-sala-admin.PNG)
 
 ### Como Executar
 
