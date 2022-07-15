@@ -1,11 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { Card } from "../../components/Card";
+import { useState, useEffect } from "react";
+import { Card, CardProps } from "../../components/Card";
 import "./styles.css";
+
+interface ProfileResponse {
+  name: string;
+  avatar_url: string;
+}
+
+interface User {
+  name: string;
+  avatar: string;
+}
 
 export function Home() {
   const [studentName, setStudentName] = useState("");
-  const [students, setStudents] = useState([]);
-  const [user, setUser] = useState({ name: '', avatar: '' })
+  const [students, setStudents] = useState<CardProps[]>([]);
+  const [user, setUser] = useState<User>({} as User)
 
   function handleAddStudent() {
     const newStudent = {
@@ -24,7 +34,7 @@ export function Home() {
 
     async function fetchData() {
       const response = await fetch('https://api.github.com/users/thiagodepaulasouza')
-      const data = await response.json()
+      const data = await response.json() as ProfileResponse
       setUser({
         name: data.name,
         avatar: data.avatar_url,
