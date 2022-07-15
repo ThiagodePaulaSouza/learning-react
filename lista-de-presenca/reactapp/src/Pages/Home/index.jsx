@@ -21,14 +21,17 @@ export function Home() {
   }
 
   useEffect(() => {
-    fetch('https://api.github.com/users/thiagodepaulasouza')
-    .then(response => response.json())
-    .then(data => {
+
+    async function fetchData() {
+      const response = await fetch('https://api.github.com/users/thiagodepaulasouza')
+      const data = await response.json()
       setUser({
         name: data.name,
         avatar: data.avatar_url,
       })
-    })
+    }
+
+    fetchData()
   }, [])
 
   return (
