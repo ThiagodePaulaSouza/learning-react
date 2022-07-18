@@ -1,6 +1,8 @@
 # React Projects
 
-- [letmeask](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/letmeask)
-- [todo](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/todo)
-- [eventPlatform](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/event-plataform)
-- [toggleSwitch](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/toggle-switch)
+- [Ds meta (react + spring)](https://github.com/ThiagodePaulaSouza/dsmeta)
+- [Lista de presenca](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/lista-de-presenca/reactapp)
+- [Letmeask](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/letmeask)
+- [To Do List](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/todo)
+- [Event Platform](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/event-plataform)
+- [Toggle Switch](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/toggle-switch)
