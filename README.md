@@ -1,5 +1,6 @@
 # React Projects
 
+- [Calculator](https://github.com/ThiagodePaulaSouza/calculadora-react)
 - [Ds meta (react + spring)](https://github.com/ThiagodePaulaSouza/dsmeta)
 - [Lista de presenca](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/lista-de-presenca/reactapp)
 - [Letmeask](https://github.com/ThiagodePaulaSouza/react-exercises/tree/main/letmeask)
