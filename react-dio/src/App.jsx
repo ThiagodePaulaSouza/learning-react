@@ -1,3 +1,4 @@
+import { Card } from "./components/Card";
 import { Item } from "./components/Item";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
         <Item> Item 2 </Item>
         <Item> Item 3 </Item>
       </ul>
+      <Card />
     </>
   );
 };
