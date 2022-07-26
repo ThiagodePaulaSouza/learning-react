@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "../Button";
 
 export const Card = () => {
   let [valor, setValor] = useState(0)
@@ -17,8 +18,8 @@ export const Card = () => {
         Feature
       </div>
       <div className="card-body">
-        <button type="button" className="btn btn-success" onClick={Adicionar}>Adicionar</button>
-        <button type="button" className="btn btn-danger" onClick={Remover}>Remover</button>
+        <Button className='btn btn-success' onClick={Adicionar}>Adiconar</Button>
+        <Button className='btn btn-danger' onClick={Remover}>Remover</Button>
         <p>{valor}</p>
       </div>
     </div>
